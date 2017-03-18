@@ -20,6 +20,7 @@ System.out.println("Witaj w kalkulatorze! Wybierz:");
 	    		kalkulator.pobierzLiczby();
 	    		kalkulator.wypiszDzialanie();
                         kalkulator.dzialanie_koniec();
+                      
                         
 	    		break;
 	    	case 2:

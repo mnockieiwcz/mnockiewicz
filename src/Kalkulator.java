@@ -3,18 +3,18 @@ import java.util.Scanner;
 public class Kalkulator {
 	
 	private String znak="";
-        private String w_dzialanie="";
+        private String wynikDzialanie="";
         private double wynik=0;
 	Scanner daneWejsciowe = new Scanner(System.in);
 	Scanner znakWejsciowy = new Scanner(System.in);
-	private String tablicaLiczb="";
+	private String ciagLiczb="";
 	
-	public String getTablicaLiczb(){
-		return tablicaLiczb;
+	public String getCiagLiczb(){
+		return ciagLiczb;
 	}
 	
-	public void setLiczba(String tablicaLiczb){
-		this.tablicaLiczb=tablicaLiczb;
+	public void setCiagLiczba(String ciagLiczb){
+		this.ciagLiczb=ciagLiczb;
 	}
 	
 	public String getZnak(){
@@ -30,14 +30,14 @@ public class Kalkulator {
 		boolean end = false;
                 String pom="",pom1="";
 		int i=0;
-                tablicaLiczb="";
+		ciagLiczb="";
 		do{
                                 
 				System.out.println("Podaj liczbê zmiennoprzecinkowa:");
 				pom1= daneWejsciowe.nextLine();
                                 if(!pom1.equals("koniec"))
                                 {
-                                    tablicaLiczb=tablicaLiczb+pom1+" ";
+                                	ciagLiczb=ciagLiczb+pom1+" ";
                                 }
 				end = pom1.endsWith("koniec");
 				System.out.println("Podaj znak dzialania:");
@@ -51,7 +51,7 @@ public class Kalkulator {
                                 
 		i++;	
 		}while(!end);
-                String[] parts = tablicaLiczb.split(" ");
+                String[] parts = ciagLiczb.split(" ");
                 for(int x=0;x<znak.length();x++)
                 {
                     double a,b;
@@ -89,17 +89,17 @@ public class Kalkulator {
 	}
 	public void dzialanie_koniec()
         {
-            w_dzialanie="";
+		wynikDzialanie="";
             int i=0;
-                String[] parts = tablicaLiczb.split(" ");
+                String[] parts = ciagLiczb.split(" ");
                 for(int x=0;x<znak.length();x++)
                 {
                     
-                     w_dzialanie=w_dzialanie+parts[x]+znak.charAt(x);
+                	wynikDzialanie=wynikDzialanie+parts[x]+znak.charAt(x);
                      i++;
                 }
-                 w_dzialanie=w_dzialanie+parts[i]+"="+Double.toString(wynik);
-                 System.out.println("Dzialanie to:"+w_dzialanie);
+                wynikDzialanie=wynikDzialanie+parts[i]+"="+Double.toString(wynik);
+                 System.out.println("Dzialanie to:"+wynikDzialanie);
                 
             
         }
@@ -108,7 +108,7 @@ public class Kalkulator {
 	}
 	
 	public void wypiszDzialanie(){
-			System.out.println(tablicaLiczb);
+			System.out.println(ciagLiczb);
 			System.out.println(znak);
 		
 	}
